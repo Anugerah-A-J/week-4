@@ -23,7 +23,7 @@ const Menu = () => {
               href="./form-page.html"
               className="menu-item d-flex justify-content-between"
             >
-              <div className="text align-self-center">Add new place</div>
+              <div className="text align-self-center">Add new placeeee</div>
               <div className="icon">
                 <img src={icon} alt="arrow" />
               </div>
