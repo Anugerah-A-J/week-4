@@ -5,7 +5,7 @@ import Posts from '../component/Posts'
 
 const Home = () => {
   return (
-    <div>
+    <div className='layout container'>
       <Header />
       <Menu />
       <Posts />

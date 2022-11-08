@@ -1,5 +1,6 @@
 import icon from '../asset/arrow-upright.png';
 import React from 'react'
+import { Link } from "react-router-dom";
 
 const Menu = () => {
   return (
@@ -19,15 +20,12 @@ const Menu = () => {
             />
           </div>
           <div className="col-4">
-            <a
-              href="./form-page.html"
-              className="menu-item d-flex justify-content-between"
-            >
-              <div className="text align-self-center">Add new placeeee</div>
+            <Link className="menu-item d-flex justify-content-between" to="/form">
+              <div className="text align-self-center">Add new place</div>
               <div className="icon">
                 <img src={icon} alt="arrow" />
               </div>
-            </a>
+            </Link>
             <a
               href="./post-page.html"
               className="menu-item d-flex justify-content-between"

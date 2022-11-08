@@ -13,6 +13,13 @@
       "siteLocation": "Jakarta",
       "description": "Tempatnya sangat indah",
       "id": 2
+    },
+    {
+      "name": "Ulhaq",
+      "siteName": "Kebun Raya",
+      "siteLocation": "Bogor",
+      "description": "Terdapat istana",
+      "id": 3
     }
   ],
   "comments": [

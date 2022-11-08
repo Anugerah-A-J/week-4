@@ -39,6 +39,10 @@ const Posts = () => {
   const createPost = async () => {
     await axios.post('http://localhost:3001/posts', { name, siteName, siteLocation, description })
     getPlaces()
+    setName('')
+    setSiteName('')
+    setSiteLocation('')
+    setDescription('')
   }
 
   const handleSubmit = event => {
