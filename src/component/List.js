@@ -14,6 +14,7 @@ const List = () => {
 
   const onClickDeleteButtonHandler = (todoId) => {
     axios.delete(`http://localhost:3001/posts/${todoId}`);
+    getPlaces();
   };
 
   useEffect(() => {
