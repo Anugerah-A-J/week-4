@@ -41,6 +41,8 @@ a {
   color: #000;
 }
 
+/* Form */
+
 .submit-button {
   width: 100%;
   background-color: #6822D1;
@@ -88,14 +90,8 @@ a {
   }
 
   /* detail page */
-  .detailpage {
-    min-height: 300px;
-    width: 400px;
-    padding: 20px 15px;
-    border-radius: 10px;
-    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
-    margin-bottom: 26px;
-    margin-left: 34%;
-    background-color: rgb(212, 208, 208);
-    margin-top: 10%;
-  }
+
+.comment-button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
