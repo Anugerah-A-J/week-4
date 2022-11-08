@@ -12,6 +12,10 @@ const List = () => {
     setPlaces(data)
   }
 
+  const onClickDeleteButtonHandler = (todoId) => {
+    axios.delete(`http://localhost:3001/posts/${todoId}`);
+  };
+
   useEffect(() => {
     getPlaces()
   }, [])
@@ -36,22 +40,26 @@ const List = () => {
             return (
               <div className="col-4 list-item-wrapper" key={item.id}>
                 <div className="list-item">
-                    <div className="row">
-                      <div className="col-10">
-                        <h4 className="text">{item.siteName} by {item.name}</h4>
-                        <div className="text">{item.siteName}</div>
-                        <div className="text mt-2">{item.description}</div>
-                      </div>
-                      <div className="col-2">
-                        <div className="icon">
-                          <Link to={`/detail/${item.id}`} key={item.id}>
+                  <div className="row">
+                    <div className="col-10">
+                      <h4 className="text">{item.siteName} by {item.name}</h4>
+                      <div className="text">{item.siteName}</div>
+                      <div className="text mt-2">{item.description}</div>
+                    </div>
+                    <div className="col-2">
+                      <div className="icon">
+                        <Link to={`/detail/${item.id}`} key={item.id}>
                           <img src={icon} alt="arrow" />
-                          </Link>
-                        </div>
+                        </Link>
                       </div>
                     </div>
+                  </div>
                   <hr />
-                  <div className="delete-button text-danger">Delete</div>
+                  <div className="delete-button text-danger">
+                    <button type="button" onClick={() => onClickDeleteButtonHandler(item.id)}>
+                      Delete
+                    </button>
+                  </div>
                 </div>
               </div>
             )
