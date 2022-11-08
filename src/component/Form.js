@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Form = () => {
   let navigate = useNavigate();
+
   // POST Request
   const [name, setName] = useState('');
   const [siteName, setSiteName] = useState('');

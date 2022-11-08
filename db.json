@@ -20,34 +20,6 @@
       "siteLocation": "Bogor",
       "description": "Terdapat istana",
       "id": 3
-    },
-    {
-      "name": "Zafar",
-      "siteName": "Istana",
-      "siteLocation": "Jakarta Pusat",
-      "description": "4324234723984738",
-      "id": 4
-    },
-    {
-      "name": "Refido",
-      "siteName": "Alun-alun",
-      "siteLocation": "Bandung",
-      "description": "1231231231",
-      "id": 6
-    },
-    {
-      "name": "Adhit",
-      "siteName": "Kebun",
-      "siteLocation": "Semarang",
-      "description": "ewqeqwe",
-      "id": 7
-    },
-    {
-      "name": "dasdas",
-      "siteName": "dasdasdas",
-      "siteLocation": "dasdasd",
-      "description": "asdasd",
-      "id": 8
     }
   ],
   "comments": [

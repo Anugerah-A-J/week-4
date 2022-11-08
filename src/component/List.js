@@ -12,8 +12,8 @@ const List = () => {
     setPlaces(data)
   }
 
-  const onClickDeleteButtonHandler = (todoId) => {
-    axios.delete(`http://localhost:3001/posts/${todoId}`);
+  const onClickDeleteButtonHandler = (id) => {
+    axios.delete(`http://localhost:3001/posts/${id}`);
     getPlaces();
   };
 
@@ -44,7 +44,7 @@ const List = () => {
                   <div className="row">
                     <div className="col-10">
                       <h4 className="text">{item.siteName} by {item.name}</h4>
-                      <div className="text">{item.siteName}</div>
+                      <div className="text">{item.siteLocation}</div>
                       <div className="text mt-2">{item.description}</div>
                     </div>
                     <div className="col-2">
