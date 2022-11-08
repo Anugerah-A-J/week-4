@@ -9,18 +9,22 @@ const Form = () => {
   const [siteLocation, setSiteLocation] = useState('');
   const [description, setDescription] = useState('');
 
+  const [nameErr, setNameErr] = useState(false);
   const handleChangeName = event => {
     setName(event.target.value)
   }
 
+  const [siteNameErr, setSiteNameErr] = useState(false);
   const handleChangeSiteName = event => {
     setSiteName(event.target.value)
   }
 
+  const [siteLocationErr, setSiteLocationErr] = useState(false);
   const handleChangeSiteLocation = event => {
     setSiteLocation(event.target.value)
   }
 
+  const [descriptionErr, setDescriptionErr] = useState(false);
   const handleChangeDescription = event => {
     setDescription(event.target.value)
   }
@@ -35,9 +39,20 @@ const Form = () => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    if (!name) return
-    createPost()
+    if (name.length === 0) {
+      setNameErr(true)
+    } else if (siteName.length === 0) {
+      setSiteNameErr(true)
+    } else if (siteLocation.length === 0) {
+      setSiteLocationErr(true)
+    } else if (description.length === 0) {
+      setDescriptionErr(true)
+    }
+    else {
+      createPost()
+    }
   }
+
   return (
     <div>
       <div className="header mb-4">
@@ -58,23 +73,36 @@ const Form = () => {
           <div className="form">
             <div className="mb-3">
               <label className="form-label align-self-center">Name</label>
-              <input type="text" className="form-control" placeholder='Enter your name' value={name} onChange={handleChangeName} required />
-              <span className="form-text text-danger">
-                Please fill this field!
-              </span>
+              <input type="text" className="form-control" placeholder='Enter your name' value={name} onChange={handleChangeName} focus />
+              {nameErr ?
+                <span className="form-text text-danger">
+                  Please fill this field!
+                </span> : ""}
             </div>
             <div className="mb-3">
               <label htmlFor="context" className="form-label align-self-center">Site</label>
-              <input type="text" className="form-control" placeholder='siteName' value={siteName} onChange={handleChangeSiteName} required />
+              <input type="text" className="form-control" placeholder='siteName' value={siteName} onChange={handleChangeSiteName} />
+              {siteNameErr ?
+                <span className="form-text text-danger">
+                  Please fill this field!
+                </span> : ""}
             </div>
             <div className="mb-3">
               <label htmlFor="context" className="form-label align-self-center">Location</label>
-              <input type="text" className="form-control" placeholder='siteLocation' value={siteLocation} onChange={handleChangeSiteLocation} required />
+              <input type="text" className="form-control" placeholder='siteLocation' value={siteLocation} onChange={handleChangeSiteLocation} />
+              {siteLocationErr ?
+                <span className="form-text text-danger">
+                  Please fill this field!
+                </span> : ""}
             </div>
             <div className="mb-3">
               <label htmlFor="context" className="form-label align-self-center">Description</label>
               {/* <input type="text" className="form-control" placeholder='description' value={description} onChange={handleChangeDescription} required /> */}
-              <textarea type="text" className="form-control" placeholder='description' value={description} onChange={handleChangeDescription} required />
+              <textarea type="text" className="form-control" placeholder='description' value={description} onChange={handleChangeDescription} />
+              {descriptionErr ?
+                <span className="form-text text-danger">
+                  Please fill this field!
+                </span> : ""}
             </div>
           </div>
           <div className="button">
