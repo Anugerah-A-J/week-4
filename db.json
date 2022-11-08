@@ -1,0 +1,25 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "anonym",
+      "siteName": "a site",
+      "siteLocation": "somewhere",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+    },
+    {
+      "name": "Irfan",
+      "siteName": "Monas",
+      "siteLocation": "Jakarta",
+      "description": "Tempatnya sangat indah",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ]
+}
