@@ -20,6 +20,13 @@
       "siteLocation": "Bogor",
       "description": "Terdapat istana",
       "id": 3
+    },
+    {
+      "name": "Zafar",
+      "siteName": "Istana",
+      "siteLocation": "Jakarta Pusat",
+      "description": "4324234723984738",
+      "id": 4
     }
   ],
   "comments": [
