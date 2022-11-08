@@ -50,32 +50,6 @@ const Posts = () => {
     if (!name) return
     createPost()
   }
-
-  return (
-    <div>
-      <h1>Form</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder='name' value={name} onChange={handleChangeName} required /> <br />
-        <input type="text" placeholder='siteName' value={siteName} onChange={handleChangeSiteName} required /> <br />
-        <input type="text" placeholder='siteLocation' value={siteLocation} onChange={handleChangeSiteLocation} required /> <br />
-        <input type="text" placeholder='description' value={description} onChange={handleChangeDescription} required /> <br />
-        <button type="submit">Add</button>
-      </form>
-      <ul>
-        {places?.map((item) => {
-          return (
-            <li key={item.id}>
-              {item.id} <br />
-              {item.name} <br />
-              {item.siteName} <br />
-              {item.siteLocation} <br />
-              {item.description} <br />
-            </li>
-          )
-        })}
-      </ul>
-    </div>
-  )
 }
 
 export default Posts

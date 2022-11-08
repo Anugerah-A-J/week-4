@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Form = () => {
+  let navigate = useNavigate();
   // POST Request
   const [name, setName] = useState('');
   const [siteName, setSiteName] = useState('');
@@ -37,6 +38,7 @@ const Form = () => {
     setDescription('')
   }
 
+  
   const handleSubmit = event => {
     event.preventDefault()
     if (name.length === 0) {
@@ -51,6 +53,7 @@ const Form = () => {
     else {
       createPost()
     }
+    navigate('/post');
   }
 
   return (
