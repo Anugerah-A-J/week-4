@@ -26,24 +26,18 @@ const Menu = () => {
                 <img src={icon} alt="arrow" />
               </div>
             </Link>
-            <a
-              href="./post-page.html"
-              className="menu-item d-flex justify-content-between"
-            >
+            <Link className="menu-item d-flex justify-content-between" to="/post">
               <div className="text align-self-center">See all places</div>
               <div className="icon">
                 <img src={icon} alt="arrow" />
               </div>
-            </a>
-            <a
-              href="./removed-page.html"
-              className="menu-item d-flex justify-content-between"
-            >
+            </Link>
+            <Link className="menu-item d-flex justify-content-between" to="">
               <div className="text align-self-center">Removed Item</div>
               <div className="icon">
                 <img src={icon} alt="arrow" />
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
