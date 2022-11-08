@@ -57,9 +57,9 @@ const List = () => {
                   </div>
                   <hr />
                   <div className="delete-button text-danger">
-                    <button type="button" onClick={() => onClickDeleteButtonHandler(item.id)}>
+                    <div className='text-danger' onClick={() => onClickDeleteButtonHandler(item.id)}>
                       Delete
-                    </button>
+                    </div>
                   </div>
                 </div>
               </div>
