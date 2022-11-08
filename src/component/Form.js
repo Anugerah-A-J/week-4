@@ -38,7 +38,7 @@ const Form = () => {
     setDescription('')
   }
 
-  
+
   const handleSubmit = event => {
     event.preventDefault()
     if (name.length === 0) {

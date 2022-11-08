@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import icon from '../asset/arrow-upright.png';
 import { Link, useParams } from "react-router-dom";
 import axios from 'axios';
+import CommentForm from '../component/CommentForm';
 // import { convertRoutesToDataRoutes } from '@remix-run/router/dist/utils';
 
 
@@ -17,6 +18,11 @@ const DetailPage = () => {
       })
     }
   }, [id])
+
+  const [isShown, setIsShown] = useState(false);
+  const handleClick = event => {
+    setIsShown(current => !current);
+  }
 
   return (
     <div className='layout container'>
@@ -37,11 +43,12 @@ const DetailPage = () => {
         Description
         <h5>{detail.description}</h5>
       </div>
-      <div className="comment-button text-primary">
+      <div onClick={handleClick} className="comment-button text-primary">
         Add comment
       </div>
-
+      {isShown && <CommentForm />}
     </div>
   )
 }
+
 export default DetailPage
