@@ -39,8 +39,12 @@ const DetailPage = () => {
         <hr />
       </div>
       <div className="list-item">
-        Description
-        <h5>{detail.description}</h5>
+        <h5>Description</h5>
+        <p>{detail.description}</p>
+        <hr />
+        <div className="comment-button text-primary">
+          Edit description
+        </div>
       </div>
       <div onClick={handleClick} className="comment-button text-primary">
         Add comment
