@@ -32,7 +32,7 @@ const Form = () => {
   }
 
   const createPost = async () => {
-    await axios.post('http://localhost:3001/posts', { name, siteName, siteLocation, description, isDeleted: false })
+    await axios.post('https://placeadvisory-dev.herokuapp.com/posts', { name, siteName, siteLocation, description, isDeleted: false })
     setName('')
     setSiteName('')
     setSiteLocation('')

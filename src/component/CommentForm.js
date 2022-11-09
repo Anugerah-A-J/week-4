@@ -21,7 +21,7 @@ const CommentForm = () => {
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:3001/posts/${id}`).then(res => {
+      axios.get(`https://placeadvisory-dev.herokuapp.com/posts/${id}`).then(res => {
         console.log(res)
         setPlace(res.data)
       })
@@ -33,7 +33,7 @@ const CommentForm = () => {
   }
 
   const addComment = async () => {
-    await axios.post(`http://localhost:3001/comments`, { idPost: id, name, comment })
+    await axios.post(`https://placeadvisory-dev.herokuapp.com/comments`, { idPost: id, name, comment })
     setName('')
     setComment('')
   }

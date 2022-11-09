@@ -12,12 +12,12 @@ const DetailPage = () => {
   const [comments, setComments] = useState([])
 
   const getPost = async () => {
-    const { data } = await axios.get(`http://localhost:3001/posts/${id}`)
+    const { data } = await axios.get(`https://placeadvisory-dev.herokuapp.com/posts/${id}`)
     setDetail(data)
   }
 
   const getComments = async () => {
-    const { data } = await axios.get(`http://localhost:3001/comments`)
+    const { data } = await axios.get(`https://placeadvisory-dev.herokuapp.com/comments`)
     setComments(data)
   }
 
@@ -43,7 +43,7 @@ const DetailPage = () => {
   }
   const patchComment = async () => {
     await axios.patch(
-      `http://localhost:3001/comments/${commentTargetId}`,
+      `https://placeadvisory-dev.herokuapp.com/comments/${commentTargetId}`,
       { comment: newComment }
     )
     getComments()
@@ -57,7 +57,7 @@ const DetailPage = () => {
   };
 
   const deleteComment = (x) => {
-    axios.delete(`http://localhost:3001/comments/${x}`);
+    axios.delete(`https://placeadvisory-dev.herokuapp.com/comments/${x}`);
     getPost()
     getComments()
   };
