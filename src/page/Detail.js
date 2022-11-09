@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import icon from '../asset/arrow-upright.png';
 import { Link, useParams } from "react-router-dom";
 import axios from 'axios';
 import CommentForm from '../component/CommentForm';
@@ -40,14 +39,18 @@ const DetailPage = () => {
         <hr />
       </div>
       <div className="list-item">
-        Description
-        <h5>{detail.description}</h5>
+        <h5>Description</h5>
+        <p>{detail.description}</p>
+        <hr />
+        <div className="comment-button text-primary">
+          Edit description
+        </div>
       </div>
       <div onClick={handleClick} className="comment-button text-primary">
         Add comment
       </div>
       {isShown && <CommentForm />}
-      <div className="comment-list-wrapper">
+      <div className="comment-list-wrapper mt-3">
         <h4>All Comments</h4>
         <ul>
           {detail.comments?.map((item) => {
