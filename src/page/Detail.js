@@ -29,7 +29,7 @@ const DetailPage = () => {
         <nav className="navbar navbar-expand-lg mb-3">
           <div className="container-fluid ps-0">
             <div className="d-flex justify-content-between">
-              <Link to="/"> Home </Link>
+              <Link to="/post"> Back to the List </Link>
             </div>
             PlaceAdvisory
           </div>
