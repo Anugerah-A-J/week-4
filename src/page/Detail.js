@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useParams } from "react-router-dom";
 import axios from 'axios';
 import CommentForm from '../component/CommentForm';
+import PostForm from '../component/PostForm';
 // import { convertRoutesToDataRoutes } from '@remix-run/router/dist/utils';
 
 
@@ -27,16 +28,28 @@ const DetailPage = () => {
   }, [id])
 
   const [isShown, setIsShown] = useState(false);
+  const [isShown2, setIsShown2] = useState(false);
+  
   const handleClick = event => {
     setIsShown(current => !current);
   }
+  const handleClick2 = event => {
+    setIsShown2(current => !current);
+  }
 
   const [commentEditStatus, setCommentEditStatus] = useState(false)
+  const [postEditStatus, setPostEditStatus] = useState(false)
   const [commentTargetId, setCommentTargetId] = useState(0)
+  const [postTargetId, setPostTargetId] = useState(0)
   const [newComment, setNewComment] = useState('')
+  const [newPost, setNewPost] = useState('')
   const handleEdit = (x) => {
     setCommentTargetId(x)
     setCommentEditStatus(current => !current)
+  }
+  const handlePostEdit = () => {
+    setPostTargetId(id)
+    setPostEditStatus(current => !current)
   }
   const handleNewComment = event => {
     setNewComment(event.target.value)
@@ -49,11 +62,28 @@ const DetailPage = () => {
     getComments()
     getPost()
   }
+  const handleNewPost = event => {
+    setNewPost(event.target.value)
+  }
+  const patchPost = async () => {
+    await axios.patch(
+      `https://placeadvisory-dev.herokuapp.com/posts/${postTargetId}`,
+      { post: newPost }
+    )
+    getComments()
+    getPost()
+  }
   const handlePatch = event => {
     event.preventDefault()
     if (!newComment || !commentTargetId) return
     patchComment()
     setCommentEditStatus(current => !current)
+  };
+  const handlePostPatch = event => {
+    event.preventDefault()
+    if (!newPost || !postTargetId) return
+    patchPost()
+    setPostEditStatus(current => !current)
   };
 
   const deleteComment = (x) => {
@@ -81,9 +111,10 @@ const DetailPage = () => {
         <h5>Description</h5>
         <p>{detail.description}</p>
         <hr />
-        <div className="comment-button text-primary">
+        <div onClick={handleClick2} className="comment-button text-primary">
           Edit description
         </div>
+        {isShown2 && <PostForm />}
       </div>
       <div onClick={handleClick} className="comment-button text-primary">
         Add comment
@@ -93,8 +124,8 @@ const DetailPage = () => {
         <h4>All Comments</h4>
         <ul>
           {comments?.map((item) => {
-            if (item.idPost == id) {
-              if (commentEditStatus == true && item.id == commentTargetId) {
+            if (item.idPost === id) {
+              if (commentEditStatus === true && item.id === commentTargetId) {
                 return (
                   <form onSubmit={handlePatch}>
                     {item.name}
