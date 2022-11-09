@@ -26,7 +26,9 @@
       "siteLocation": "Bogor",
       "description": "Terdapat istana",
       "id": 2,
-      "comments": [{}],
+      "comments": [
+        {}
+      ],
       "isDeleted": false
     },
     {
@@ -34,7 +36,9 @@
       "siteName": "Marina",
       "siteLocation": "Singapore",
       "description": "37641034610284710874302",
-      "comments": [{}],
+      "comments": [
+        {}
+      ],
       "isDeleted": false,
       "id": 3
     },
@@ -43,7 +47,9 @@
       "siteName": "1212",
       "siteLocation": "12121",
       "description": "2121",
-      "comments": [{}],
+      "comments": [
+        {}
+      ],
       "isDeleted": true,
       "id": 4
     },
@@ -52,7 +58,13 @@
       "siteName": "hrthrth",
       "siteLocation": "hrthtrh",
       "description": "rthrthrth",
-      "comments": [{}],
+      "comments": [
+        {},
+        {
+          "name": "a",
+          "comment": "a"
+        }
+      ],
       "isDeleted": false,
       "id": 5
     }
