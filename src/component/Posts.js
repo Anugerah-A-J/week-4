@@ -37,7 +37,7 @@ const Posts = () => {
   }
 
   const createPost = async () => {
-    await axios.post('http://localhost:3001/posts', { name, siteName, siteLocation, description })
+    await axios.post('http://localhost:3001/posts', { name, siteName, siteLocation, description, comments:[] })
     getPlaces()
     setName('')
     setSiteName('')

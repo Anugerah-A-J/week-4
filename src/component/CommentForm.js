@@ -2,7 +2,7 @@ import React from 'react'
 
 const CommentForm = () => {
   return (
-    <div>
+    
       <div className="form-wrapper mt-3">
         <h4>Add Comment Here</h4>
         <form className="mb-5">
@@ -21,15 +21,8 @@ const CommentForm = () => {
           </div>
         </form>
       </div>
-      <div className="comment-list-wrapper">
-        <h4>All Comments</h4>
-        <ul>
-          <li>Comment1</li>
-          <li>Comment2</li>
-          <li>Comment3</li>
-        </ul>
-      </div>
-    </div>
+      
+    
   )
 }
 
