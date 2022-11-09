@@ -51,48 +51,6 @@
       "name": "Irfan",
       "comment": "niceee",
       "id": 3
-    },
-    {
-      "idPost": "2",
-<<<<<<< HEAD
-      "name": "w",
-      "comment": "w",
-      "id": 4
-=======
-      "name": "Raka",
-      "comment": " raka edited",
-      "id": 4
-    },
-    {
-      "idPost": "1",
-      "name": "222",
-      "comment": "222",
-      "id": 5
-    },
-    {
-      "idPost": "2",
-      "name": "4324",
-      "comment": "43242",
-      "id": 6
-    },
-    {
-      "idPost": "2",
-      "name": "43",
-      "comment": "43",
-      "id": 7
-    },
-    {
-      "idPost": "2",
-      "name": "444",
-      "comment": "444",
-      "id": 8
-    },
-    {
-      "idPost": "2",
-      "name": "444",
-      "comment": "444",
-      "id": 9
->>>>>>> 3163d18153a31c734b712b35ed7a53c32ad5c5ee
     }
   ]
 }

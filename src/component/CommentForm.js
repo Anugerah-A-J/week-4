@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const CommentForm = () => {
-  const [place, setPlace] = useState({});
   const { id } = useParams();
   const [name, setName] = useState('');
   const [comment, setComment] = useState('');
@@ -16,17 +15,9 @@ const CommentForm = () => {
     setComment(event.target.value)
   }
 
-  useEffect(() => {
-    if (id) {
-      axios.get(`https://placeadvisory-dev.herokuapp.com/posts/${id}`).then(res => {
-        console.log(res)
-        setPlace(res.data)
-      })
-    }
-  }, [id])
-  const handleSubmit = event => {
-    if (!name) return
+  const handleSubmit = () => {
     addComment()
+    alert('kayaknya harus nunggu')
   }
 
   const addComment = async () => {
