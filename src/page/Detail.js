@@ -9,11 +9,16 @@ const DetailPage = () => {
   const [detail, setDetail] = useState({})
   const { id } = useParams()
 
+  const [comments, setComments]=useState([])
+
   useEffect(() => {
     if (id) {
       axios.get(`http://localhost:3001/posts/${id}`).then(res => {
         console.log(res)
         setDetail(res.data)
+      })
+      axios.get(`http://localhost:3001/comments`).then(res=>{
+        setComments(res.data)
       })
     }
   }, [id])
@@ -53,15 +58,19 @@ const DetailPage = () => {
       <div className="comment-list-wrapper mt-3">
         <h4>All Comments</h4>
         <ul>
-          {detail.comments?.map((item) => {
-            return (
-              <li key={item.id}>
-                {item.name} <br />
-                {item.comment}
-                <button>Edit</button>
-                <button>Delete</button>
-              </li>
-            )
+          {comments?.map((item) => {
+            if(item.idPost==id){
+              return (
+                <li key={item.id}>
+                  {item.name} <br />
+                  {item.comment}
+                  <button>Edit</button>
+                  <button>Delete</button>
+                </li>
+              )
+            }else{
+              return null              
+            }
           })}
         </ul>
       </div>

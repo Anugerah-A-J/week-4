@@ -6,18 +6,6 @@
       "siteName": "monas",
       "siteLocation": "Jakarta",
       "description": "monas is national monument",
-      "comments": [
-        {
-          "id": 1,
-          "name": "nona",
-          "comment": "very crowded place"
-        },
-        {
-          "id": 2,
-          "name": "onan",
-          "comment": "very nice place"
-        }
-      ],
       "isDeleted": false
     },
     {
@@ -26,47 +14,35 @@
       "siteLocation": "Bogor",
       "description": "Terdapat istana",
       "id": 2,
-      "comments": [
-        {}
-      ],
       "isDeleted": false
     },
     {
-      "name": "Zafar",
-      "siteName": "Marina",
-      "siteLocation": "Singapore",
-      "description": "37641034610284710874302",
-      "comments": [
-        {}
-      ],
+      "name": "q",
+      "siteName": "q",
+      "siteLocation": "q",
+      "description": "q",
       "isDeleted": false,
       "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "idPost": 1,
+      "name": "anon",
+      "comment": "very crowded place"
     },
     {
-      "name": "1212",
-      "siteName": "1212",
-      "siteLocation": "12121",
-      "description": "2121",
-      "comments": [
-        {}
-      ],
-      "isDeleted": true,
-      "id": 4
+      "id": 2,
+      "idPost": 1,
+      "name": "nona",
+      "comment": "very nice place"
     },
     {
-      "name": "yrtrhrt",
-      "siteName": "hrthrth",
-      "siteLocation": "hrthtrh",
-      "description": "rthrthrth",
-      "comments": [
-        {},
-        {
-          "name": "a",
-          "comment": "a"
-        }
-      ],
-      "isDeleted": false,
-      "id": 5
+      "idPost": "1",
+      "name": "1",
+      "comment": "1",
+      "id": 3
     }
   ]
 }

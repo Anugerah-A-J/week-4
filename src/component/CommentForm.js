@@ -33,13 +33,7 @@ const CommentForm = () => {
   }
 
   const addComment = async () => {
-    await axios.patch(`http://localhost:3001/posts/${id}`, {
-      comments: [...place.comments, {
-        name,
-        comment,
-      }]
-    })
-    //getPlaces()
+    await axios.post(`http://localhost:3001/comments`, {idPost:id,name,comment})
     setName('')
     setComment('')
   }
