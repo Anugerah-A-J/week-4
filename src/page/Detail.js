@@ -98,10 +98,10 @@ const DetailPage = () => {
                 return (
                   <form onSubmit={handlePatch}>
                     {item.name}
-                    <input required value={newComment} onChange={handleNewComment} />
+                    <input className='ms-3' required value={newComment} onChange={handleNewComment} />
                     {/* if  selectedId or newTitle is not set, this button will be disabled*/}
-                    <button type='submit'>
-                      Edit
+                    <button className='btn btn-primary ms-2 mb-1' type='submit'>
+                      Submit
                     </button>
                   </form>
                 )
@@ -113,8 +113,8 @@ const DetailPage = () => {
                       <p>{item.comment}</p>
                     </div>
                     <div className="d-flex my-3">
-                      <div className='text-primary me-3' onClick={() => handleEdit(item.id)}>Edit</div>
-                      <div className='text-danger' onClick={() => deleteComment(item.id)}>Delete</div>
+                      <div className='comment-button text-primary me-3' onClick={() => handleEdit(item.id)}>Edit</div>
+                      <div className='comment-button text-danger' onClick={() => deleteComment(item.id)}>Delete</div>
                     </div>
                   </li>
                 )
