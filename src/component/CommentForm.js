@@ -4,11 +4,8 @@ import axios from "axios";
 
 const CommentForm = () => {
   const [place, setPlace] = useState({});
-
   const { id } = useParams();
-
   const [name, setName] = useState('');
-
   const [comment, setComment] = useState('');
 
   const handleChangeName = event => {
