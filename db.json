@@ -30,13 +30,19 @@
       "id": 1,
       "idPost": 1,
       "name": "anon",
-      "comment": "very crowded place"
+      "comment": "qweqwfwqqewf"
     },
     {
       "id": 2,
       "idPost": 1,
       "name": "nona",
       "comment": "very nice place"
+    },
+    {
+      "idPost": "2",
+      "name": "asasfasf",
+      "comment": "d",
+      "id": 3
     }
   ]
 }

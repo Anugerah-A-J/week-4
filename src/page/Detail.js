@@ -31,6 +31,31 @@ const DetailPage = () => {
     setIsShown(current => !current);
   }
 
+  const [commentEditStatus, setCommentEditStatus] = useState(false)
+  const [commentTargetId, setCommentTargetId] = useState(0)
+  const [newComment,setNewComment]=useState('')
+  const handleEdit = (x) => {
+    setCommentTargetId(x)
+    setCommentEditStatus(current => !current)
+  }
+  const handleNewComment=event=>{
+    setNewComment(event.target.value)
+  }
+  const patchComment=async()=>{
+    await axios.patch(
+      `http://localhost:3001/comments/${commentTargetId}`,
+      {comment:newComment}
+    )
+    getComments()
+    getPost()
+  }
+  const handlePatch = event => {
+    event.preventDefault()
+    if(!newComment||!commentTargetId)return
+    patchComment()
+    setCommentEditStatus(current => !current)
+  };
+
   const deleteComment = (x) => {
     axios.delete(`http://localhost:3001/comments/${x}`);
     getPost()
@@ -69,14 +94,27 @@ const DetailPage = () => {
         <ul>
           {comments?.map((item) => {
             if (item.idPost == id) {
-              return (
-                <li key={item.id}>
-                  {item.name} <br />
-                  {item.comment}
-                  <button>Edit</button>
-                  <button onClick={() => deleteComment(item.id)}>Delete</button>
-                </li>
-              )
+              if (commentEditStatus == true && item.id == commentTargetId) {
+                return (
+                  <form onSubmit={handlePatch}>
+                    {item.name}
+                    <input required value={newComment} onChange={handleNewComment} />
+                    {/* if  selectedId or newTitle is not set, this button will be disabled*/}
+                    <button type='submit'>
+                      Edit
+                    </button>
+                  </form>
+                )
+              } else {
+                return (
+                  <li key={item.id}>
+                    {item.name} <br />
+                    {item.comment}
+                    <button onClick={() => handleEdit(item.id)}>Edit</button>
+                    <button onClick={() => deleteComment(item.id)}>Delete</button>
+                  </li>
+                )
+              }
             } else {
               return null
             }
