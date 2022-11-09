@@ -47,6 +47,21 @@ const DetailPage = () => {
         Add comment
       </div>
       {isShown && <CommentForm />}
+      <div className="comment-list-wrapper">
+        <h4>All Comments</h4>
+        <ul>
+          {detail.comments?.map((item) => {
+            return (
+              <li key={item.id}>
+                {item.name} <br />
+                {item.comment}
+                <button>Edit</button>
+                <button>Delete</button>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
     </div>
   )
 }
