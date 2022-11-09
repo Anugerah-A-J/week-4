@@ -9,24 +9,33 @@ const DetailPage = () => {
   const [detail, setDetail] = useState({})
   const { id } = useParams()
 
-  const [comments, setComments]=useState([])
+  const [comments, setComments] = useState([])
+
+  const getPost = async () => {
+    const { data } = await axios.get(`http://localhost:3001/posts/${id}`)
+    setDetail(data)
+  }
+
+  const getComments = async () => {
+    const { data } = await axios.get(`http://localhost:3001/comments`)
+    setComments(data)
+  }
 
   useEffect(() => {
-    if (id) {
-      axios.get(`http://localhost:3001/posts/${id}`).then(res => {
-        console.log(res)
-        setDetail(res.data)
-      })
-      axios.get(`http://localhost:3001/comments`).then(res=>{
-        setComments(res.data)
-      })
-    }
+    getPost()
+    getComments()
   }, [id])
 
   const [isShown, setIsShown] = useState(false);
   const handleClick = event => {
     setIsShown(current => !current);
   }
+
+  const deleteComment = (x) => {
+    axios.delete(`http://localhost:3001/comments/${x}`);
+    getPost()
+    getComments()
+  };
 
   return (
     <div className='layout container'>
@@ -59,17 +68,17 @@ const DetailPage = () => {
         <h4>All Comments</h4>
         <ul>
           {comments?.map((item) => {
-            if(item.idPost==id){
+            if (item.idPost == id) {
               return (
                 <li key={item.id}>
                   {item.name} <br />
                   {item.comment}
                   <button>Edit</button>
-                  <button>Delete</button>
+                  <button onClick={() => deleteComment(item.id)}>Delete</button>
                 </li>
               )
-            }else{
-              return null              
+            } else {
+              return null
             }
           })}
         </ul>
