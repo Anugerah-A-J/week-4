@@ -17,7 +17,8 @@
           "name": "onan",
           "comment": "very nice place"
         }
-      ]
+      ],
+      "isDeleted": false
     },
     {
       "name": "Ulhaq",
@@ -25,7 +26,26 @@
       "siteLocation": "Bogor",
       "description": "Terdapat istana",
       "id": 2,
-      "comments": []
+      "comments": [],
+      "isDeleted": false
+    },
+    {
+      "name": "Zafar",
+      "siteName": "Marina",
+      "siteLocation": "Singapore",
+      "description": "37641034610284710874302",
+      "comments": [],
+      "isDeleted": true,
+      "id": 3
+    },
+    {
+      "name": "1212",
+      "siteName": "1212",
+      "siteLocation": "12121",
+      "description": "2121",
+      "comments": [],
+      "isDeleted": true,
+      "id": 4
     }
   ]
 }

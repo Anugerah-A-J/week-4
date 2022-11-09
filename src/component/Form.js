@@ -32,7 +32,7 @@ const Form = () => {
   }
 
   const createPost = async () => {
-    await axios.post('http://localhost:3001/posts', { name, siteName, siteLocation, description, comments:[]})
+    await axios.post('http://localhost:3001/posts', { name, siteName, siteLocation, description, comments: [], isDeleted: false })
     setName('')
     setSiteName('')
     setSiteLocation('')
@@ -53,8 +53,8 @@ const Form = () => {
     }
     else {
       createPost()
+      navigate('/post');
     }
-    navigate('/post');
   }
 
   return (

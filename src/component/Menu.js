@@ -32,7 +32,7 @@ const Menu = () => {
                 <img src={icon} alt="arrow" />
               </div>
             </Link>
-            <Link className="menu-item d-flex justify-content-between" to="">
+            <Link className="menu-item d-flex justify-content-between" to="/trash">
               <div className="text align-self-center">Removed Item</div>
               <div className="icon">
                 <img src={icon} alt="arrow" />

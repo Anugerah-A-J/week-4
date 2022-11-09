@@ -5,6 +5,7 @@ import './App.css'
 import FormPage from './page/FormPage'
 import PostPage from './page/PostPage'
 import DetailPage from './page/Detail'
+import TrashPage from './page/TrashPage'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path='/form' element={<FormPage />} />
         <Route path='/post' element={<PostPage />} />
         <Route path='/detail/:id' element={<DetailPage />} />
+        <Route path='/trash' element={<TrashPage />} />
       </Routes>
     </BrowserRouter >
   )
