@@ -33,25 +33,25 @@ const DetailPage = () => {
 
   const [commentEditStatus, setCommentEditStatus] = useState(false)
   const [commentTargetId, setCommentTargetId] = useState(0)
-  const [newComment,setNewComment]=useState('')
+  const [newComment, setNewComment] = useState('')
   const handleEdit = (x) => {
     setCommentTargetId(x)
     setCommentEditStatus(current => !current)
   }
-  const handleNewComment=event=>{
+  const handleNewComment = event => {
     setNewComment(event.target.value)
   }
-  const patchComment=async()=>{
+  const patchComment = async () => {
     await axios.patch(
       `http://localhost:3001/comments/${commentTargetId}`,
-      {comment:newComment}
+      { comment: newComment }
     )
     getComments()
     getPost()
   }
   const handlePatch = event => {
     event.preventDefault()
-    if(!newComment||!commentTargetId)return
+    if (!newComment || !commentTargetId) return
     patchComment()
     setCommentEditStatus(current => !current)
   };
@@ -108,10 +108,14 @@ const DetailPage = () => {
               } else {
                 return (
                   <li key={item.id}>
-                    {item.name} <br />
-                    {item.comment}
-                    <button onClick={() => handleEdit(item.id)}>Edit</button>
-                    <button onClick={() => deleteComment(item.id)}>Delete</button>
+                    <div className="">
+                      <h5>{item.name}</h5>
+                      <p>{item.comment}</p>
+                    </div>
+                    <div className="d-flex my-3">
+                      <div className='text-primary me-3' onClick={() => handleEdit(item.id)}>Edit</div>
+                      <div className='text-danger' onClick={() => deleteComment(item.id)}>Delete</div>
+                    </div>
                   </li>
                 )
               }

@@ -21,7 +21,7 @@
       "siteName": "q",
       "siteLocation": "q",
       "description": "q",
-      "isDeleted": false,
+      "isDeleted": true,
       "id": 3
     }
   ],
@@ -40,8 +40,8 @@
     },
     {
       "idPost": "2",
-      "name": "asasfasf",
-      "comment": "d",
+      "name": "Irfan",
+      "comment": "Nice place!",
       "id": 3
     }
   ]

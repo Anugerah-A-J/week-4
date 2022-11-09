@@ -4,11 +4,11 @@ import axios from "axios";
 
 const CommentForm = () => {
   const [place, setPlace] = useState({});
-  
+
   const { id } = useParams();
 
   const [name, setName] = useState('');
-  
+
   const [comment, setComment] = useState('');
 
   const handleChangeName = event => {
@@ -33,13 +33,12 @@ const CommentForm = () => {
   }
 
   const addComment = async () => {
-    await axios.post(`http://localhost:3001/comments`, {idPost:id,name,comment})
+    await axios.post(`http://localhost:3001/comments`, { idPost: id, name, comment })
     setName('')
     setComment('')
   }
 
   return (
-
     <div className="form-wrapper mt-3">
       <h4>Add Comment Here</h4>
       <form className="mb-5" onSubmit={handleSubmit}>
@@ -47,12 +46,12 @@ const CommentForm = () => {
           <div className="mb-3">
             <label className="form-label align-self-center">Name</label>
             <input type="text" className="form-control" placeholder='Enter your name'
-              required value={name} onChange={handleChangeName}/>
+              required value={name} onChange={handleChangeName} />
           </div>
           <div className="mb-3">
             <label htmlFor="context" className="form-label align-self-center">Comment</label>
             <textarea type="text" className="form-control" placeholder='Add your commment'
-              required value={comment} onChange={handleChangeComment}/>
+              required value={comment} onChange={handleChangeComment} />
           </div>
         </div>
         <div className="button">
@@ -60,8 +59,6 @@ const CommentForm = () => {
         </div>
       </form>
     </div>
-
-
   )
 }
 
