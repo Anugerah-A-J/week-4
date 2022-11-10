@@ -6,19 +6,16 @@ import axios from 'axios';
 const List = () => {
   // GET Request
   const [places, setPlaces] = useState([]);
+  const [search, setSearch] = useState('');
   const getPlaces = async () => {
     const { data } = await axios.get('https://placeadvisory-dev.herokuapp.com/posts')
     console.log(data)
     setPlaces(data)
   }
 
-  // const onClickDeleteButtonHandler = (id) => {
-  //   axios.delete(`http://localhost:3001/posts/${id}`);
-  //   getPlaces();
-  // };
-
-  const onClickDeleteButtonHandler = (id) => {
-    axios.patch(`https://placeadvisory-dev.herokuapp.com/posts/${id}`, { isDeleted: true });
+  // Patch Request
+  const onClickDeleteButtonHandler = async (id) => {
+    await axios.patch(`https://placeadvisory-dev.herokuapp.com/posts/${id}`, { isDeleted: true });
     getPlaces();
   };
 
@@ -56,18 +53,11 @@ const List = () => {
                       <div className="text">{item.siteLocation}</div>
                       <div className="text mt-2">{item.description}</div>
                     </div>
-                    <div className="col-2">
-                      <div className="icon">
-                        <Link to={`/detail/${item.id}`} key={item.id}>
-                          <img src={icon} alt="arrow" />
-                        </Link>
+                    <hr />
+                    <div className="delete-button text-danger">
+                      <div className='text-danger' onClick={() => onClickDeleteButtonHandler(item.id)}>
+                        Delete
                       </div>
-                    </div>
-                  </div>
-                  <hr />
-                  <div className="delete-button text-danger">
-                    <div className='text-danger' onClick={() => onClickDeleteButtonHandler(item.id)}>
-                      Delete
                     </div>
                   </div>
                 </div>
