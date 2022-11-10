@@ -25,6 +25,9 @@ const List = () => {
   useEffect(() => {
     getPlaces()
   }, [])
+
+  // Search state
+  const [query, setQuery] = useState('')
   return (
     <div>
       <div className="header mb-4">
@@ -40,9 +43,10 @@ const List = () => {
         <p>Here are the visited places!</p>
         <hr />
       </div>
-      <div className="list-wrapper mt-5">
-        <div className="row">
-          {places?.map((item) => {
+      <div className="list-wrapper mt-3">
+        <input className='search' type="text" placeholder='search' onChange={(event) => setQuery(event.target.value)} />
+        <div className="row mt-3">
+          {places?.filter(item => item.siteName.toLowerCase().includes(query) || item.siteLocation.toLowerCase().includes(query) || item.name.toLowerCase().includes(query) || item.description.toLowerCase().includes(query)).map((item) => {
             return (
               <div className={`col-4 ${item.isDeleted ? "d-none" : ""} list-item-wrapper`} key={item.id}>
                 <div className="list-item">

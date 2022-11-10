@@ -29,7 +29,7 @@ const DetailPage = () => {
 
   const [isShown, setIsShown] = useState(false);
   const [isShown2, setIsShown2] = useState(false);
-  
+
   const handleClick = event => {
     setIsShown(current => !current);
   }
